@@ -1,8 +1,8 @@
-- 👋 Hi, I’m @akitsawsbhattarai
-- 👀 I’m interested in ...
-- 🌱 I’m currently learning ...
-- 💞️ I’m looking to collaborate on ...
-- 📫 How to reach me ...
+- 👋 Hi, I’m Swastika
+- 👀 I’m interested in FullStack Development
+- 🌱 I’m currently learning Python
+- 💞️ I’m looking to collaborate on Startup
+- 📫 How to reach me swastikabhattarai080@gmail.com
 
 <!---
 akitsawsbhattarai/akitsawsbhattarai is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
