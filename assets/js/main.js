@@ -40,21 +40,26 @@ if(navClose){
 }
 /*==================== ACCORDION SKILLS ====================*/
 const skillsContent=document.getElementsByClassName('skills__content')
-console.log(skillsContent)
+// console.log(skillsContent)
 skillsHeader=document.getElementsByClassName('skills__header')
 
 function toggleSkills(){
-    let itemClass=this.parentNode
-    console.log(itemClass)
+    let itemClass=this.parentNode 
 
-    for(i=0; i< skillsContent.length; i++){
-        console.log(skillsContent[i])
-        skillsContent[i].className='skills__content skills__close'
-    }
+    if(this.parentNode.className=='skills__content skills__open'){
+        this.parentNode.className ='skills__content skills__close'
+      }
 
-    if(itemClass.className=='skills__content skills__close'){
+      
+        
+    else if (this.parentNode.className =='skills__content skills__close'){
+        for(i=0; i< skillsContent.length; i++){
+            skillsContent[i].className='skills__content skills__close'
+        } 
         this.parentNode.className='skills__content skills__open'
     }
+
+       
 }
 Array.from(skillsHeader).forEach((el)=>{
     // console.log(el)
@@ -63,10 +68,12 @@ Array.from(skillsHeader).forEach((el)=>{
 })
 
 /*==================== QUALIFICATION TABS ====================*/
-const tab=document.querySelectorAll( '[data-target]'),
-    tabContents=document.querySelectorAll('[data-content]')
+const tabs=document.querySelectorAll( '[data-target]')
+const tabContents=document.querySelectorAll('[data-content]')
+console.log(tabs)
+console.log(tabContents)
 
-tabContents.forEach(tab=>{
+tabs.forEach(tab=>{
     tab.addEventListener('click',()=>{
         const target=document.querySelector(tab.dataset.target)
 
@@ -75,7 +82,7 @@ tabContents.forEach(tab=>{
         })
         target.classList.add('qualification__active')
 
-        tab.forEach(tab=>{
+        Array.from(tabs).forEach(tab=>{
             tab.classList.remove('qualification__active')
         })
         tab.classList.add('qualification__active')
