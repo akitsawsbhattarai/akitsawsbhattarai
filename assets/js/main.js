@@ -189,8 +189,52 @@ window.addEventListener('scroll', scrollActive)
 
 /*==================== CHANGE BACKGROUND HEADER ====================*/ 
 
+function scrollHeader(){
+    const nav = document.getElementById('header')
+
+    if (this.scrollY >=80) nav.classList.add('scroll-header');else nav.classList.remove('scroll-header')
+    
+}
+window.addEventListener('scroll', scrollHeader)
+
 
 /*==================== SHOW SCROLL UP ====================*/ 
+function scrollUp(){
+    const scrollUp = document.getElementById('scrollup');
+    console.log(scrollUp)
+    if (this.scrollY >= 560) scrollUp.classList.add('show-scroll');else scrollUp.classList.remove('show-scroll')
+    
+}
 
+window.addEventListener('scroll', scrollUp)
 
 /*==================== DARK LIGHT THEME ====================*/ 
+
+const themeButton = document.getElementById('theme-button')
+const darkTheme = 'dark-theme'
+const iconTheme = 'uil-sun'
+
+// previously selected topic(if user selected)
+const selectedTheme = localStorage.getItem('selected-theme')
+const selectedIcon = localStorage.getItem('selected-icon')
+
+//we obtain the current theme that the interface has by validating the dark-theme class 
+const getCurrentTheme = ()=> document.body.classList.contains(darkTheme) ? 'dark' : 'light'
+const getCurrentIcon = ()=> themeButton.classList.contains(iconTheme) ? 'uil-moon' : 'uil-sun'
+
+// we validate if the user previously chose a topic
+if (selectedTheme){
+    // if the validation is fulfilled, we ask wht the issue was to know if we activated or deactivated the dark
+    document.body.classList[selectedTheme === 'dark' ? 'add': 'remove'](darkTheme)
+    themeButton.classList[selectedIcon === 'uil-moon' ? 'add': 'remove'](iconTheme)
+}
+
+// activate / deactivate the theme manually withthe button
+themeButton.addEventListener('click', ()=> {
+    // add/remove dark theme icon
+    document.body.classList.toggle(darkTheme)
+    themeButton.classList.toggle(iconTheme)
+    // save theme and icon chose by user
+    localStorage.setItem('selected-theme', getCurrentTheme())
+    localStorage.setItem('selected-icon', getCurrentIcon() )
+})
