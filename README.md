@@ -1,6 +1,6 @@
 - 👋 Hi, I’m Swastika
-- 👀 I’m interested in FullStack Development
-- 🌱 I’m currently learning React
+- 👀 I’m interested in FullStack Development specializing in Python(Backend) and React(Frontend)
+- 🌱 I’m currently learning React.
 - 💞️ I’m looking to collaborate on Startup
 - 📫 How to reach me swastikabhattarai080@gmail.com
 
